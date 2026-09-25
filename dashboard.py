@@ -31,21 +31,21 @@ monthly = con.execute(f'''SELECT month, source, COUNT(*) applications,
  GROUP BY 1,2 ORDER BY 1,2''').df()
 left,right = st.columns(2)
 left.plotly_chart(px.line(monthly, x='month', y='fraud_rate_pct', color='source', markers=True,
- title='Fraud rate over dataset months'), use_container_width=True)
+ title='Fraud rate over dataset months'), width='stretch')
 right.plotly_chart(px.bar(monthly, x='month', y='applications', color='source', barmode='group',
- title='Application volume'), use_container_width=True)
+ title='Application volume'), width='stretch')
 segments = con.execute(f'''SELECT device_os, COUNT(*) applications,
  100.0*AVG(fraud_bool) fraud_rate_pct FROM applications WHERE {where}
  GROUP BY 1 ORDER BY applications DESC''').df()
 left,right = st.columns(2)
 left.plotly_chart(px.bar(segments, x='device_os', y='fraud_rate_pct', hover_data=['applications'],
- title='Fraud rate by device OS'), use_container_width=True)
+ title='Fraud rate by device OS'), width='stretch')
 rules = con.execute((ROOT/'sql/14_simple_rules.sql').read_text()).df()
 right.plotly_chart(px.scatter(rules, x='precision_pct', y='recall_pct', size='reviews', text='rule_name',
- title='Transparent review rules (all months)'), use_container_width=True)
+ title='Transparent review rules (all months)'), width='stretch')
 st.subheader('Review capacity')
 budget = con.execute((ROOT/'sql/15_review_budget.sql').read_text()).df()
 st.plotly_chart(px.line(budget, x='review_pct', y='fraud_recall_pct', markers=True,
- title='Fraud found at a fixed review budget (all months)'), use_container_width=True)
+ title='Fraud found at a fixed review budget (all months)'), width='stretch')
 st.caption('This dashboard describes labeled outcomes in synthetic data. Segment differences are associations, not causal effects. Review-rule charts use the full Base variant.')
 con.close()
