@@ -1,0 +1,8 @@
+# How do transparent review rules compare on precision and recall?
+
+| rule_name | reviews | frauds_found | precision_pct | recall_pct |
+| --- | --- | --- | --- | --- |
+| weak name/email match | 221045 | 4214.0 | 1.91 | 38.21 |
+| reused device | 25302 | 1035.0 | 4.09 | 9.38 |
+| combined | 31485 | 959.0 | 3.05 | 8.7 |
+| foreign request | 25242 | 555.0 | 2.2 | 5.03 |

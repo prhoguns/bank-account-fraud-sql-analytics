@@ -1,0 +1,6 @@
+# Which application source has the higher labeled fraud rate?
+
+| source | applications | frauds | fraud_rate_pct |
+| --- | --- | --- | --- |
+| TELEAPP | 7048 | 112.0 | 1.589 |
+| INTERNET | 992952 | 10917.0 | 1.099 |

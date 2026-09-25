@@ -1,0 +1,6 @@
+data/raw/
+data/*.duckdb
+data/*.parquet
+.venv/
+__pycache__/
+.streamlit/secrets.toml

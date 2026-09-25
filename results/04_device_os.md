@@ -1,0 +1,9 @@
+# How does fraud rate vary by device operating system?
+
+| device_os | applications | frauds | fraud_rate_pct |
+| --- | --- | --- | --- |
+| windows | 263506 | 6507.0 | 2.469 |
+| macintosh | 53826 | 752.0 | 1.397 |
+| x11 | 7228 | 81.0 | 1.121 |
+| other | 342728 | 1974.0 | 0.576 |
+| linux | 332712 | 1715.0 | 0.515 |
