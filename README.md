@@ -1,8 +1,14 @@
 # Bank Account Fraud SQL Analytics
 
+[![CI](https://github.com/prhoguns/bank-account-fraud-sql-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/prhoguns/bank-account-fraud-sql-analytics/actions/workflows/ci.yml)
+
 Eighteen questions about fraudulent **bank account applications**, answered with DuckDB SQL on the one-million-row Base variant of the [Feedzai Bank Account Fraud (BAF) dataset](https://github.com/feedzai/bank-account-fraud). The project adds a live Streamlit dashboard, reproducible result tables, and two static charts. The data is synthetic and labels describe the generated account applications.
 
+**Headline:** reviewing the top 5% of applications finds 20.23% of labeled fraud and the top 10% finds 30.48%. The best single-feature rule (weak name/email match) finds 38.21% but queues 221,045 applications.
+
 **Start with:** [Findings](FINDINGS.md) · [SQL questions](sql/) · [Results](results/) · [Dashboard screenshot](screenshots/dashboard.png)
+
+CI runs all eighteen queries on every push against a small synthetic fixture with the real schema ([`scripts/make_fixture.py`](scripts/make_fixture.py)); the results in this repository come from the real data, downloaded locally.
 
 ![Fraud rate by dataset month](charts/monthly_fraud_rate.png)
 
